@@ -1,0 +1,22 @@
+server:
+  port: 8083
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://drona.db.elephantsql.com:5432/cwtucatm?socketTimeout=3
+    username: cwtucatm
+    password: iD_O8qLp2VOUCLfp_N9JXSMBvgDxt4hW
+    driverClassName: org.postgresql.Driver
